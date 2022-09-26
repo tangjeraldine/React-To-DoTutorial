@@ -14,7 +14,6 @@ function Todos() {
   const todos = useLoaderData();
   return (
     <div>
-      <h3>Todos!</h3>
       <ul>
         {todos.map((todo) => (
           <li key={todo.title}>{todo.title}</li>
