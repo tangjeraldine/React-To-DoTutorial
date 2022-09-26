@@ -19,10 +19,6 @@ const router = createBrowserRouter([
   { path: "/", loader: TodoLoader, element: <TodosNew /> },
 ]);
 
-const router2 = createBrowserRouter([
-  { path: "/", loader: TodoLoader, element: <TodosNew /> },
-]);
-
 function App() {
   return (
     <RouterProvider router={router} />
