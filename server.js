@@ -15,6 +15,15 @@ app.get("/api/todos", (req, res) => {
 });
 // remember to have a naming convention that doesn't clash with your frontend react routes
 
+app.post("/api/todos", (req, res) => {
+  res.json({ id: 1 });
+});
+
+app.get("/api/todos/:id", (req, res) => {
+  const { id } = req.params;
+  res.json(todos[id]);
+});
+
 //* This route captures any route that doesn't fall into any of the abovementioned routes, and captures it into the index.html in the dist folder
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/dist", "index.html"));

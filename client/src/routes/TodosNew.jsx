@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
 
 function Todos() {
   // const [todos, setTodos] = useState([]);
@@ -14,6 +14,16 @@ function Todos() {
   const todos = useLoaderData();
   return (
     <div>
+      <Form action='.' method='post'>
+        {/* action='.' means it posts to itself */}
+        <fieldset>
+          <legend>Todo</legend>
+          <label>
+            Title: <input name='title'></input>
+          </label>
+          <button>Create</button>
+        </fieldset>
+      </Form>
       <ul>
         {todos.map((todo) => (
           <li key={todo.title}>{todo.title}</li>
